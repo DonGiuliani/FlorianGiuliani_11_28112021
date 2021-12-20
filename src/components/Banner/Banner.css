@@ -1,0 +1,24 @@
+.link__name, #logo {
+    color: #FF6060;
+}
+
+#logo__banner {
+    font-size: 2em;
+    letter-spacing: 5px;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 2em 0 2em;
+}
+
+#links {
+    display: flex;
+
+}
+
+.link {
+    margin: 1em;
+}
