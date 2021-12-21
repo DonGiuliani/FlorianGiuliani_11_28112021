@@ -12,25 +12,53 @@
 }
 
 #logement__title {
-    font-size: 1.3em;
+    font-size: 1.6em;
+    margin-bottom: 10px;
+}
+
+#logement__details {
+    width: 50%;
 }
 
 #tags {
     display: flex;
     margin-top: 1em;
+    min-width: 350px;
 }
 
 #host {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#host__details {
+    display: flex;
+    align-items: center;
 }
 
 #host__name {
-    margin-right: 1em;
+    width: 80px;
 }
 
 #host__picture {
     border-radius: 100%;
-    width: 4em;
+    width: 3.5em;
+}
+
+@media only screen and (min-width:550px){
+    #host {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 50%;
+        margin-top: 0;
+    }
+
+    #host__picture {
+        margin-bottom: 1em;
+    }
 }

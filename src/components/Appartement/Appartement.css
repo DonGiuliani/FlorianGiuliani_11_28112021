@@ -4,15 +4,26 @@
     justify-content: center;
 }
 
+#cover {
+    display: flex;
+    justify-content: center;
+}
+
 #cover__index {
     position: relative;
     border-radius: 20px;
     margin-bottom: 2em;
     width: 90%;
+    filter: brightness(50%);
 }
 
 #text__index {
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
     position: absolute;
+    color: #FFFFFF;
+    font-size: 2em;
 }
 
 #articles {

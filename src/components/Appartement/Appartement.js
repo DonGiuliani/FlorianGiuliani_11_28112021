@@ -8,10 +8,12 @@ function Appartement() {
     const appartements = Data;
     return (
         <div id="index__page">
-            <img id="cover__index" src={Cover} alt="cover index"/>
-            <p id="text__index">
-                Chez vous, partout et ailleurs
-            </p>
+            <div id="cover">
+                <img id="cover__index" src={Cover} alt="cover index"/>
+                <p id="text__index">
+                    Chez vous, partout et ailleurs
+                </p>
+            </div>
             <div id="articles">
             {
             appartements.map((appartement) => (
