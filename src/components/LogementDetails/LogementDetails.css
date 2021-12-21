@@ -17,13 +17,14 @@
 }
 
 #logement__details {
-    width: 50%;
+    width: 100%;
 }
 
 #tags {
     display: flex;
     margin-top: 1em;
-    min-width: 350px;
+    min-width: 300px;
+    font-size: 0.6em;
 }
 
 #host {
@@ -49,6 +50,10 @@
 }
 
 @media only screen and (min-width:550px){
+    #logement__details {
+        width: 50%;
+    }
+    
     #host {
         display: flex;
         flex-direction: column-reverse;
@@ -60,5 +65,10 @@
 
     #host__picture {
         margin-bottom: 1em;
+    }
+
+    #tags {
+        min-width: 350px;
+        font-size: 1em;
     }
 }

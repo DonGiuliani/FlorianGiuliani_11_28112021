@@ -6,13 +6,12 @@ import Data from "../../pages/Accueil/data.json";
 
 function Appartement() {
     const appartements = Data;
+    const bg = `linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url(${Cover})`
+
     return (
         <div id="index__page">
-            <div id="cover">
-                <img id="cover__index" src={Cover} alt="cover index"/>
-                <p id="text__index">
-                    Chez vous, partout et ailleurs
-                </p>
+            <div id="cover" style={{ background: bg }}>
+                 Chez vous, partout et ailleurs
             </div>
             <div id="articles">
             {

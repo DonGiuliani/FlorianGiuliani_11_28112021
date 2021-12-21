@@ -2,23 +2,46 @@
     color: #FF6060;
 }
 
-#logo__banner {
-    font-size: 2em;
+#logo {
+    display: flex;
     letter-spacing: 5px;
+}
+
+#logo__image {
+    width: 20px;
+    margin: 0 10px 0 5px;
 }
 
 #banner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 0 2em 0 2em;
+    justify-content: space-around;
+    margin: 0 1em 0 1em;
 }
 
 #links {
     display: flex;
-
 }
 
 .link {
-    margin: 1em;
+    margin-left: 1.2em;
+}
+
+@media only screen and (min-width:550px){
+    #banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 3em 0 3em;
+    }
+
+    #logo {
+        display: flex;
+        font-size: 3em;
+    }
+
+    #logo__image {
+        width: 35px;
+        margin: 0 10px 0 5px;
+    }
 }

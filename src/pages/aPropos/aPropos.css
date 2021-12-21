@@ -7,4 +7,12 @@
 #cover__apropos {
     width: 90%;
     border-radius: 20px;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media only screen and (min-width:550px){
+    #cover__apropos {
+        height: 180px;
+    }
 }
