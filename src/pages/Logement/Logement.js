@@ -1,47 +1,41 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom";
 import Dropdown from "../../components/Dropdown/Dropdown";
 import Caroussel from "../../components/Caroussel/Caroussel";
 import LogementDetails from "../../components/LogementDetails/LogementDetails";
+import { useParams } from "react-router-dom";
 import "./Logement.css";
-import Data from "../Accueil/data.json";
+import {getAppartement} from "../../services/dataManager"
 
-export default class Logement extends Component {
-    constructor(props) {
-        super(props);
-        this.appartement = getLogementById(props.match.params.id)
-    }
+export default function Logement () {
 
-    render() {
-        if (this.appartement === null) return  <Redirect to="/404" />
-        return (
-            <div>
-                <Caroussel pictures={this.appartement.pictures}/>
-                <LogementDetails data={this.appartement} />
-                <div id="dropdowns">
-                    <Dropdown
-                    name="Description"
-                    description={this.appartement.description} />
+    const {id} = useParams();
+    const [appartement, setAppart] = useState("loading");
+    useEffect(async ()=>{
+        if (appartement !== "loading") return;
+        setAppart(await getAppartement(id));
+    });
 
-                    <Dropdown
-                    name="Équipements"
-                    description={this.appartement.equipments.map((equipment) => (
-                        <span className="equipment"
-                        key={equipment}>
-                            {equipment}
-                        </span>
-                    ))} />
-                </div>
+    if (appartement === null) return  <Navigate to="/404" />
+    return (
+        appartement ==="loading" ? "loading" : 
+        <div>
+            <Caroussel pictures={appartement.pictures}/>
+            <LogementDetails data={appartement} />
+            <div id="dropdowns">
+                <Dropdown
+                name="Description"
+                description={appartement.description} />
+
+                <Dropdown
+                name="Équipements"
+                description={appartement.equipments.map((equipment) => (
+                    <span className="equipment"
+                    key={equipment}>
+                        {equipment}
+                    </span>
+                ))} />
             </div>
-        )
-    }
-}
-
-function getLogementById(id){
-    for(const logement of Data){
-        if (logement.id === id) {
-            return logement
-        }
-    }
-    return null;
+        </div>
+    )
 }
